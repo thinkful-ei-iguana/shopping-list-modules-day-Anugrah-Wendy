@@ -1,7 +1,7 @@
 import item from './item.js';
 
 let items = [];
-let hideCheckedItems = 'false';
+let hideCheckedItems = false;
 
 function findById(id) {
   return items.find(a => a.id === id);
@@ -22,6 +22,10 @@ function findAndToggleChecked(id) {
   let target = this.findById(id);
   target.checked = !target.checked;
   console.log(target);
+}
+
+function toggleCheckedFilter() {
+  this.hideCheckedItems = !this.hideCheckedItems;
 }
 
 function findAndUpdateName(id, newName) {
@@ -47,6 +51,7 @@ export default {
   findById,
   addItem,
   findAndToggleChecked,
+  toggleCheckedFilter,
   findAndUpdateName,
   findAndDelete
 };
