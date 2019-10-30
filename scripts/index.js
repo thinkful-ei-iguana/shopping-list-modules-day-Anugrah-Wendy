@@ -8,3 +8,4 @@ const main = function () {
 };
 
 $(main);
+
